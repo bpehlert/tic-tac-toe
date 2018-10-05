@@ -7,17 +7,17 @@ const cells = document.querySelectorAll("td");
 // Function to clear the board
 reset.addEventListener("click", function(){
   cells.forEach((cell) => {
-    cell.innerText= '';
+    cell.textContent= '';
   });
 });
 
 // Check each cell value and mark it
 function markCell() {
-  this.innerText === "" ?
-  this.innerText = "X" :
-  this.innerText === "X" ?
-  this.innerText = "O" :
-  this.innerText = ""
+  this.textContent === "" ?
+  this.textContent = "X" :
+  this.textContent === "X" ?
+  this.textContent = "O" :
+  this.textContent = ""
 };
 
 // Add event listeners
