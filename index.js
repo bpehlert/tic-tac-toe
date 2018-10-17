@@ -7,19 +7,22 @@ const turn = document.querySelector('p');
 turn.textContent = "Player one's turn."
 
 // Sets player turn indicator
-let player = "O";
+let player = "Player one";
+let plaid = 'Player two';
 
 // Check each cell value and mark it
 function markCell() {
   if (this.textContent === "" ) {
-    if (player === "O") {
+    if (player === "Player one") {
       this.textContent = "X";
-      player = "X";
-      turn.textContent = "Player two's turn."
+      player = "Player two";
+      plaid = "Player one"
+      turn.textContent = `${player}'s turn.`
     }else {
       this.textContent = "O";
-      player = "O";
-      turn.textContent = "Player one's turn."
+      player = "Player one";
+      plaid = 'Player two'
+      turn.textContent = `${player}'s turn.`
     }
   }
   checkForWinner();
@@ -35,7 +38,7 @@ const checkForWinner = () => {
     if (cells[winningCombos[w][0]].textContent !== ""
       && cells[winningCombos[w][0]].textContent === cells[winningCombos[w][1]].textContent
       && cells[winningCombos[w][2]].textContent) {
-      alert("winner");
+      alert(`${plaid} wins! Please reset the board.`);
     };
   };
 }
