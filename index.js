@@ -1,14 +1,18 @@
 // Grab button
 const reset = document.querySelector("button");
+
 // Grab table cells
 const cells = document.querySelectorAll("td");
-// Grab p element to display player turn
-const turn = document.querySelector('p');
-turn.textContent = "Player one's turn."
 
 // Sets player turn indicator
 let player = "Player one";
-let plaid = 'Player two';
+let played = 'Player two';
+
+// Grab p element to display player turn
+const turn = document.querySelector('p');
+turn.textContent = `${player}'s turn.`
+
+
 
 // Check each cell value and mark it
 function markCell() {
@@ -16,12 +20,12 @@ function markCell() {
     if (player === "Player one") {
       this.textContent = "X";
       player = "Player two";
-      plaid = "Player one"
+      played = "Player one"
       turn.textContent = `${player}'s turn.`
     }else {
       this.textContent = "O";
       player = "Player one";
-      plaid = 'Player two'
+      played = 'Player two'
       turn.textContent = `${player}'s turn.`
     }
   }
@@ -38,7 +42,7 @@ const checkForWinner = () => {
     if (cells[winningCombos[w][0]].textContent !== ""
       && cells[winningCombos[w][0]].textContent === cells[winningCombos[w][1]].textContent
       && cells[winningCombos[w][2]].textContent) {
-      alert(`${plaid} wins! Please reset the board.`);
+      alert(`${played} wins! Please reset the board.`);
     };
   };
 }
