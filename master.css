@@ -15,6 +15,7 @@ td{
 table{
   margin-left: auto;
   margin-right: auto;
+  border-collapse: collapse;
 }
 
 button{
@@ -38,4 +39,5 @@ button:hover{
 
  p{
    font-style: italic;
+   color: #22A7F0;
  }
