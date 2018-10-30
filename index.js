@@ -39,13 +39,15 @@ const checkForWinner = () => {
     [0,4,8], [2,4,6]
   ];
   for (var w = 0; w < winningCombos.length; w++) {
-    if (cells[winningCombos[w][0]].textContent !== ""
-      && cells[winningCombos[w][0]].textContent === cells[winningCombos[w][1]].textContent
-      && cells[winningCombos[w][2]].textContent) {
+    let arr = [];
+    for (var i = 0; i < 3; i++) {
+      arr.push(cells[winningCombos[w][i]].textContent);
+    };
+    if (arr.every((v) => v === arr[0] && v !== "")) {
       alert(`${played} wins! Please reset the board.`);
     };
   };
-}
+};
 
 
 // Event listener to reset button to clear the board
